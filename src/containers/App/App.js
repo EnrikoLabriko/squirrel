@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { IndexLink } from 'react-router';
-import { LinkContainer } from 'react-router-bootstrap';
-import { Navbar, Nav, NavItem, Alert } from 'react-bootstrap';
+// import { LinkContainer } from 'react-router-bootstrap';
+// import { Navbar, Nav, NavItem, Alert } from 'react-bootstrap';
+import { Navbar, Alert } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
-import { Notifs, Footer } from 'components';
+import { Notifs } from 'components';
 // import { InfoBar } from 'components';
 import { push } from 'react-router-redux';
 import config from 'config';
@@ -60,10 +61,9 @@ export default class App extends Component {
   };
 
   render() {
-    const { user, notifs } = this.props;
+    // const { user, notifs } = this.props;
+    const { notifs } = this.props;
     const styles = require('./App.scss');
-
-    // debugger;
 
     return (
       <div className={styles.app}>
@@ -79,6 +79,7 @@ export default class App extends Component {
             <Navbar.Toggle />
           </Navbar.Header>
 
+          {/*
           <Navbar.Collapse eventKey={0}>
             <Nav navbar pullRight>
               {user && <LinkContainer to="/chat">
@@ -106,10 +107,8 @@ export default class App extends Component {
             {user && <p className={`${styles.loggedInMessage} navbar-text`}>
               Logged in as <strong>{user.email}</strong>.
             </p>}
-            {/*
-              <Nav navbar pullRight></Nav>
-             */}
           </Navbar.Collapse>
+          */}
         </Navbar>
 
         <div className={styles.appContent}>
@@ -124,8 +123,6 @@ export default class App extends Component {
           {this.props.children}
         </div>
         {/* <InfoBar /> */}
-
-        <Footer>© 2016 Центр недвижимости от Сбербанка</Footer>
       </div>
     );
   }

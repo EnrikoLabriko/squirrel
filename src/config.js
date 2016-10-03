@@ -15,17 +15,17 @@ module.exports = Object.assign({
   apiHost: process.env.APIHOST || 'localhost',
   apiPort: process.env.APIPORT,
   app: {
-    title: 'Intranet',
-    description: 'All the modern best practices in one example.',
+    title: 'Help Desk',
+    description: '',
     head: {
-      titleTemplate: 'Intranet: %s',
+      titleTemplate: 'Help Desk: %s',
       meta: [
         { name: 'description', content: 'All the modern best practices in one example.' },
         { charset: 'utf-8' },
-        { property: 'og:site_name', content: 'Intranet' },
+        { property: 'og:site_name', content: 'Help Desk' },
         { property: 'og:image', content: 'https://react-redux.herokuapp.com/logo.jpg' },
-        { property: 'og:locale', content: 'en_US' },
-        { property: 'og:title', content: 'Intranet' },
+        { property: 'og:locale', content: 'ru_RU' },
+        { property: 'og:title', content: 'Help Desk' },
         { property: 'og:description', content: 'All the modern best practices in one example.' },
         { property: 'og:card', content: 'summary' },
         { property: 'og:site', content: '@erikras' },
