@@ -1,0 +1,55 @@
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import Helmet from 'react-helmet';
+import { LoginForm } from 'components';
+import * as authActions from 'redux/modules/auth';
+import * as notifActions from 'redux/modules/notifs';
+
+@connect(
+  state => ({ user: state.auth.user }),
+  { ...notifActions, ...authActions })
+export default class Login extends Component {
+  static propTypes = {
+    user: PropTypes.object,
+    login: PropTypes.func,
+    logout: PropTypes.func,
+    notifSend: PropTypes.func
+  };
+
+  login = data => this.props.login(data)
+    .then(result => {
+      this.props.notifSend({
+        message: 'You\'r logged !',
+        kind: 'success',
+        dismissAfter: 2000
+      });
+      return result;
+    });
+
+  render() {
+    const styles = require('./Login.scss');
+    const { user, logout } = this.props;
+    return (
+      <div className={styles.loginContainer}>
+        <div className={`${styles.loginFormContainer} col-sm-3 center-block`}>
+          <Helmet title="Login" />
+          <h2 className="text-center">Авторизация</h2>
+          <br />
+          {!user && <div>
+            <LoginForm onSubmit={this.login} />
+            <br />
+          </div>
+          }
+          {user && <div>
+            <p>You are currently logged in as {user.email}.</p>
+
+            <div>
+              <button className="btn btn-danger" onClick={logout}><i className="fa fa-sign-out" />{' '}Log Out</button>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    );
+  }
+}

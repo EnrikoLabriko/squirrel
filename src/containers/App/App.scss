@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Casper';
+  src: local('Casper'), url('fonts/casper.woff2') format('woff2'), url('fonts/casper.woff') format('woff'), url('fonts/casper.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Casper';
+  src: local('Casper Italic'), local('CasperItalic'), url('fonts/casperitalic.woff2') format('woff2'), url('fonts/casperitalic.woff') format('woff'), url('fonts/casperitalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Casper';
+  src: local('Casper Bold'), local('CasperBold'), url('fonts/casperbold.woff2') format('woff2'), url('fonts/casperbold.woff') format('woff'), url('fonts/casperbold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Casper';
+  src: local('Casper Bold Italic'), local('CasperBoldItalic'), url('fonts/casperbolditalic.woff2') format('woff2'), url('fonts/casperbolditalic.woff') format('woff'), url('fonts/casperbolditalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+.app {
+  height: 100vh;
+
+  .brand {
+    position: absolute;
+    $size: 40px;
+    top: 5px;
+    left: 5px;
+    display: inline-block;
+    background: #43b328 url('https://sberned.ru/media/images/logo.svg') no-repeat 9px center;
+    width: $size;
+    height: $size;
+    background-size: 180%;
+    margin: 0 10px 0 0;
+    border-radius: $size / 2;
+  }
+  nav :global(.fa) {
+    font-size: 2em;
+    line-height: 20px;
+  }
+}
+
+.nav {
+  background-color: #3c3c3c;
+
+  li a {
+    color: #fff;
+  }
+}
+
+.appContent {
+  //margin: 50px 0; // for fixed navbar
+  top: 50px;
+  height: calc(100vh - 50px);
+  position: relative;
+  //position: relative;
+  //min-height: 100%;
+}
+
+.notifs {
+  margin: 15px 0;
+}
+
+:global(.form-control-feedback) {
+  text-align: inherit;
+}
