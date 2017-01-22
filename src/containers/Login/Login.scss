@@ -1,9 +1,8 @@
 .loginContainer {
-  background: url('https://parline.ru/cas/219ca1bfc511c9babe1125240c0252d5.jpg') no-repeat;
+  background: url('./bg.jpg') no-repeat;
   background-size: cover;
   height: 100%;
 }
-
 
 .loginFormContainer {
   background-color: #fff;
@@ -17,7 +16,4 @@
   margin: auto;
 
   height: 310px;
-
-  //background: url('https://parline.ru/cas/219ca1bfc511c9babe1125240c0252d5.jpg') no-repeat;
-  //background-size: cover;
 }
